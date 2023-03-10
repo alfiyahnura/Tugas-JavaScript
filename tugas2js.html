@@ -1,0 +1,34 @@
+<script>
+
+    let pegawai = "Al Fiyah Nur Auliya";
+    let jabatan = "Manager";
+    let status = "Belum Menikah";
+    let harset = 0;
+    switch(jabatan){
+        case 'Manager': harset = 10000000; break;
+        case 'Asisten Manager': harset = 8000000; break;
+        case 'Staf': harset = 5000000; break;
+        default: harset = 0;
+
+    }
+    let tunjangan_jabatan = harset / 100 * 10;
+    let bpjs = harset / 100 * 10;
+
+    let tunjangan_keluarga = 0;
+    if (status == 'Menikah') tunjangan_keluarga = harset * 0.1;
+    else tunjangan_keluarga = 0;
+
+    let total_penghasilan = harset + tunjangan_jabatan + bpjs + tunjangan_keluarga;
+
+    document.write("Diketahui"+
+    "<br> Pegawai : " + pegawai +
+    "<br> Jabatan : " + jabatan +
+    "<br> Status : " + status +
+    "<br> Proses : " +
+    "<br> Gaji Pokok : " + harset +
+    "<br> Tunjangan Jabatan : " + tunjangan_jabatan +
+    "<br> BPJS : " + bpjs +
+    "<br> Tunjangan Keluarga : " + tunjangan_keluarga +
+    "<br> Total seluruh pendapatan atau penghasilan : " + total_penghasilan 
+    );
+</script>
