@@ -1,0 +1,57 @@
+<script>
+    let nilai = 80;
+    let grade = "";
+
+    if (nilai > 89 && nilai <= 100) grade = "A";
+    else if (nilai > 79 && nilai <= 89) grade = "B";
+    else if (nilai > 69 && nilai <= 79) grade = "C";
+    else if (nilai > 59 && nilai <= 69) grade = "D";
+    else if (nilai >= 0 && nilai <= 59) grade = "E";
+    else grade = "";
+
+    switch(grade){
+        case "A": predikat = "Memuaskan"; break;
+        case "B": predikat = "Baik"; break;
+        case "C": predikat = "Cukup"; break;
+        case "D": predikat = "Kurang"; break;
+        case "E": predikat = "Sangat Kurang"; break;
+        default: predikat = ""; break;
+    }
+    let p1 = {nama:"Alfiyah", nilai:80, grade, predikat};
+    let p2 = {nama:"Zizi", nilai:81, grade, predikat};
+    let p3 = {nama:"Ida", nilai:82, grade, predikat};
+    let p4 = {nama:"Hening", nilai:83, grade, predikat};
+    let p5 = {nama:"Dania", nilai:50, grade, predikat};
+
+    let person = [p1, p2, p3, p4, p5];
+
+</script>
+<h3>
+    <table style="padding: 10; text-align: center; width: 100%;">
+        <thead>
+            <tr>
+                <th>No</th>
+                <th>Nama</th>
+                <th>Nilai</th>
+                <th>Grade</th>
+                <th>Predikat</th>
+            </tr>
+        </thead>
+        <tbody>
+            <script>
+                var no = 1;
+                for (p of person){
+                    let ket = (p.nilai >= 60)? "Lulus" : "Gagal";
+                    document.write(`<tr bgcolor="">
+                        <td>${no++}</td>
+                        <td>${p.nama}</td>
+                        <td>${p.nilai}</td>
+                        <td>${p.grade}</td>
+                        <td>${p.predikat}</td>
+                        <td>${ket}</td>
+                    </tr>`);
+                }
+            </script>
+        </tbody>
+    </table>
+</h3>
